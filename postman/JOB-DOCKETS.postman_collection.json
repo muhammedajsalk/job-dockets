@@ -1,0 +1,202 @@
+{
+  "info": {
+    "_postman_id": "09079e54-9797-4f82-9913-5962cbe86794",
+    "name": "JOB-DOCKETS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27537179"
+  },
+  "item": [
+    {
+      "name": "Job",
+      "item": [
+        {
+          "name": "Successful Job Creation",
+          "id": "163e21e9-d5a9-4134-828c-75ed07276541",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"jobNumber\": \"JOB-A-001\",\r\n    \"clientName\": \"Client Alpha\",\r\n    \"siteLocation\": \"Site A Location\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5173/api/jobsT",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5173",
+              "path": [
+                "api",
+                "jobsT"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Job Creation Conflict",
+          "id": "e00203c5-ad77-44c7-b6f9-939aa9b7df98",
+          "request": {
+            "method": "POST",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Close Job",
+          "id": "aef56de5-5cde-4c45-80dd-ad71f233edf5",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/jobs/691f4a238a43115e05c81f44/close",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "jobs",
+                "691f4a238a43115e05c81f44",
+                "close"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Jobs with Status Closed Filter",
+          "id": "e6d7c075-205c-4fd0-a552-a731d44d4379",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "List Jobs with Status Open Filter",
+          "id": "06a91f24-efa6-4ddf-b09c-2deba471500f",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ],
+      "id": "e957a4d0-62b2-421b-8e9e-a501221359fd"
+    },
+    {
+      "name": "Dockets",
+      "item": [
+        {
+          "name": "Successful Docket Creation",
+          "id": "5d6b7272-e91c-47c3-a89a-7862b6791967",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"supervisorName\": \"Alice Supervisor\",\r\n    \"date\": \"20-11-2025\",\r\n    \"labourItems\": [\r\n        {\r\n            \"workerName\": \"Worker One\",\r\n            \"role\": \"labourer\",\r\n            \"hoursWorked\": 8.0\r\n        }\r\n    ],\r\n    \"notes\": \"Full day on site.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/jobs/691f4c3f8a43115e05c81f4c/dockets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "jobs",
+                "691f4c3f8a43115e05c81f4c",
+                "dockets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Business Rule Failure (Job Closed)",
+          "id": "04235d2d-2978-4dfb-bcda-dc5cdd08459b",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/jobs/691f4a238a43115e05c81f44/dockets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "jobs",
+                "691f4a238a43115e05c81f44",
+                "dockets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Joi Validation Failure",
+          "id": "5f2a7afa-c1f3-4214-803f-4fb671caed77",
+          "request": {
+            "method": "POST",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Job with Dockets",
+          "id": "e5f5e71c-bb02-4d26-aa93-8a2250b47ebb",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "List Dockets with Filters",
+          "id": "1bac74e9-3147-4615-8939-718d31b9852d",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Global Summary",
+          "id": "93e746e8-35ec-4ea8-bed3-c05f4827fd04",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "List Dockets with Filters",
+          "id": "e8a834d0-76d8-46c1-8673-4c2965e10a00",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ],
+      "id": "27ffb8e0-eaa9-45a3-b37b-558347f8dcd1"
+    }
+  ]
+}
