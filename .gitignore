@@ -1,0 +1,45 @@
+# -------------------------
+# Node.js
+# -------------------------
+# Node dependencies
+/node_modules
+/npm-debug.log
+/yarn-error.log
+/pnpm-debug.log
+
+# Logs and temporary files
+/logs
+/tmp
+
+# Production build output
+/dist
+/build
+/out
+
+# -------------------------
+# Environment and Secrets
+# -------------------------
+# Environment variables (Crucial for security!)
+.env
+.env.local
+.env.development
+.env.production
+
+# Keys and Certificates
+*.pem
+*.key
+
+# -------------------------
+# Mongoose/MongoDB
+# -------------------------
+# Local database files (if not using an external server)
+/data/db
+/db.sqlite  # If you temporarily used SQLite
+
+# -------------------------
+# OS and Editor Specific Files
+# -------------------------
+.DS_Store
+Thumbs.db
+.vscode
+.idea
